@@ -212,6 +212,7 @@ public:
 	{
 		font.loadFromFile("arial.ttf");
 		text.setFont(font);
+		text.setCharacterSize(textSize);
 		text.setFillColor(sf::Color::Black);
 		text.setStyle(sf::Text::Regular);
 		rect.setFillColor(sf::Color::White);
@@ -268,11 +269,11 @@ public:
 	{
 		loadButton.text.setString("Load");
 		loadButton.rect.setSize(sf::Vector2f(loadButton.text.getGlobalBounds().width + 6, loadButton.text.getGlobalBounds().height + 6));
-		loadButton.setPosition(sf::Vector2f(2, 20));
+		loadButton.rect.setPosition(sf::Vector2f(2, 2));
 		loadButton.text.setPosition(loadButton.rect.getPosition().x + (loadButton.rect.getSize().x / 400000), loadButton.rect.getPosition().y);
 		saveButton.text.setString("Save");
 		saveButton.rect.setSize(sf::Vector2f(saveButton.text.getGlobalBounds().width + 6, saveButton.text.getGlobalBounds().height + 6));
-		saveButton.setPosition(sf::Vector2f(2, 45));
+		saveButton.rect.setPosition(sf::Vector2f(2, 27));
 		saveButton.text.setPosition(saveButton.rect.getPosition().x + (saveButton.rect.getSize().x / 400000), saveButton.rect.getPosition().y);
 	}
 };
