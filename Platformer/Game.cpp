@@ -21,7 +21,7 @@ void GameClass::LoadLevel(std::string levelName, Tile** incTile)
 		{
 			incTile[i][j].type = Tile::Type::Sky;
 			incTile[i][j].actor.type = Actor::Type::None;
-			incTile[i][j].RefreshTile;
+			incTile[i][j].RefreshTile();
 		}
 	}
 	//exsisting load
@@ -128,7 +128,14 @@ void GameClass::LoadLevel(std::string levelName, Tile** incTile)
 						std::cout << "Loaded player at: " << posString << "\n"; //we now have something like 5,15
 						std::string xStr = posString.substr(0, posString.find(','));
 						std::string yStr = posString.substr(posString.find(',') + 1, posString.length());
-						incTile[std::stoi(xStr)][std::stoi(yStr)].ChangeActor(Actor::Type::Player);
+						//set player to player
+						player.type = Actor::Type::Player;
+						//centre player on grid square
+						player.init(stoi(xStr) * 32 + ((1025 / 2) - ((32 * x) / 2)), stoi(yStr) * 32);
+						player.startPos = sf::Vector2f(stoi(xStr) * 32 + ((1025 / 2) - ((32 * x) / 2)), stoi(yStr) * 32);
+						player.setPosition(player.startPos);
+						player.Respawn();
+						//incTile[std::stoi(xStr)][std::stoi(yStr)].ChangeActor(Actor::Type::Player);
 						lineHold[curStart] = '<';
 						lineHold[curEnd] = '>';
 					}
@@ -173,7 +180,7 @@ Collision Player::CollisionCheck(sf::FloatRect other)
 	Collision col;
 	//is the position we want to move valid?
 	float deltaX = (nextPos.x - (nextRect.width / 2)) - (other.left - other.width / 2);
-	float deltaY = (nextPos.y = (nextRect.height / 2)) - (other.top - other.height / 2);
+	float deltaY = (nextPos.y - (nextRect.height / 2)) - (other.top - other.height / 2);
 	//we want an absolute number (between 0 / 1 Whole number)
 	float intersectX = abs(deltaX) - ((other.width / 2) + (nextRect.width / 2));
 	float intersectY = abs(deltaY) - ((other.height / 2) + (nextRect.height / 2));
