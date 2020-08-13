@@ -394,6 +394,7 @@ void GameClass::Update(MainRenderWindow& mainWindow)
 					if (player.lives == 0)
 					{
 						//game over screen needs to be here
+						//
 						mainWindow.close();
 					}
 				}
@@ -406,8 +407,7 @@ void GameClass::Update(MainRenderWindow& mainWindow)
 				{
 					std::cout << "Player Picked a Coin Up!" << std::endl;
 					player.coins++;
-					tile[i][j].actor.type = Actor::Type::None;
-					tile[i][j].RefreshTile();
+					tile[i][j].ChangeActor(Actor::Type::None);
 				}
 			}
 			else if (tile[i][j].actor.type == Actor::Type::Spike)
@@ -438,8 +438,7 @@ void GameClass::Update(MainRenderWindow& mainWindow)
 						{
 							//we're on top
 							//kill enemy(temp code)
-							tile[i][j].actor.type = Actor::Type::None;
-							tile[i][j].RefreshTile();
+							tile[i][j].ChangeActor(Actor::Type::None);
 						}
 						else
 						{

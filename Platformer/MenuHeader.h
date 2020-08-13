@@ -13,9 +13,10 @@ public:
 		Editor,
 		EditorLevelSelect,
 		Game,
-		GameLevelSelect
+		GameLevelSelect,
+		GameOver
 	};
-	//keep track of where we are
+	//keep track of where we are and default to the main menu
 	MenuMode currentMode = MainMenu;
 };
 
@@ -104,5 +105,30 @@ public:
 	{
 		myMode.currentMode = m;
 		menuActive = false;
+	}
+};
+
+class GameOver
+{
+public:
+	MenuButton goScreen;
+	Mode goMode;
+	GameOver()
+	{
+		goScreen.text.setString("GAME OVER");
+		goScreen.rect.setSize(sf::Vector2f(goScreen.text.getGlobalBounds().width + 6, goScreen.text.getGlobalBounds().height + 6));
+		goScreen.rect.setPosition(sf::Vector2f(1025 - (1025 / 2 - (goScreen.rect.getSize().x / 2)), 650 - (650 / 2 - (goScreen.rect.getSize().y / 2))));
+		goScreen.text.setPosition(goScreen.rect.getPosition().x + (goScreen.rect.getSize().x / 400000), goScreen.rect.getPosition().y);
+	}
+	sf::Vector2f worldPos;
+	bool Start();
+	void Update(MainRenderWindow& mainWindow);
+
+	bool goActive = false;
+
+	void ChangeMode(Mode::MenuMode k)
+	{
+		goMode.currentMode = k;
+		goActive = true;
 	}
 };
