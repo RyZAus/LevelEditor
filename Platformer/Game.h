@@ -70,6 +70,8 @@ public:
 	float gravity;
 	float friction;
 	int coins;
+	sf::SoundBuffer deathSB;
+	sf::Sound sound;
 };
 
 int sign(int x);

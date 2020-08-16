@@ -170,7 +170,7 @@ void GameClass::LoadLevel(std::string levelName, Tile** incTile)
 }
 
 void Player::Respawn()
-{
+{	
 	setPosition(startPos);
 	Refresh();
 }

@@ -6,6 +6,7 @@
 #include <list>
 #include <functional>
 #include "WindowHeader.h"
+#include <SFML/Audio.hpp>
 //make our class actor(layer1) both drawable and transformable
 class Actor : public sf::Drawable, public sf::Transformable
 {

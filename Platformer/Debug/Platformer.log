@@ -1,14 +1,41 @@
-﻿  Source.cpp
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(73,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(73,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(158,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(158,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(477,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(509,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(525,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(541,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(557,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(573,21): warning C4018: '<': signed/unsigned mismatch
+﻿  Game.cpp
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(74,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(74,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(159,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(159,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(478,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(510,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(526,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(542,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(558,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(574,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.cpp(43,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.cpp(75,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.cpp(91,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.cpp(107,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.cpp(123,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.cpp(135,98): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.cpp(135,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.cpp(146,20): warning C4018: '<': signed/unsigned mismatch
+  Source.cpp
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(74,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(74,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(159,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(159,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(478,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(510,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(526,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(542,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(558,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Editor.h(574,21): warning C4018: '<': signed/unsigned mismatch
 C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Source.cpp(15,21): warning C4129: '.': unrecognized character escape sequence
 C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Source.cpp(116,86): warning C4244: 'argument': conversion from 'const int' to 'T', possible loss of data
           with
@@ -25,4 +52,5 @@ C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Source.cpp(1
           [
               T=float
           ]
+  Generating Code...
   Platformer.vcxproj -> C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Debug\Platformer.exe

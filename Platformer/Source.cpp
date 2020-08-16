@@ -240,6 +240,7 @@ void EditorClass::Update(MainRenderWindow& mainWindow)
 
 bool GameClass::Start(MainRenderWindow& mainWindow)
 {
+	deathSB.loadFromFile("SFX/death.wav");
 	GetAllSaveFiles();
 	//setup our game and init our tiles
 	for (int i = 0; i < x; i++)
@@ -388,6 +389,9 @@ void GameClass::Update(MainRenderWindow& mainWindow)
 				{
 					//hit lava lose a life
 					player.lives--;
+					//SOUND BUFFER
+					sound.setBuffer(deathSB);
+					sound.play();
 					//reset position
 					player.Respawn();
 					std::cout << "Player hit lava" << std::endl;
@@ -416,6 +420,9 @@ void GameClass::Update(MainRenderWindow& mainWindow)
 				if (pcol.hit)
 				{
 					player.lives--;
+					//SOUND BUFFER
+					sound.setBuffer(deathSB);
+					sound.play();
 					player.Respawn();
 					std::cout << "Player hit a spike" << std::endl;
 					if (player.lives == 0)
@@ -444,6 +451,9 @@ void GameClass::Update(MainRenderWindow& mainWindow)
 						{
 							//enemy above
 							player.lives--;
+							//SOUND BUFFER
+							sound.setBuffer(deathSB);
+							sound.play();
 							player.Respawn();
 							if (player.lives == 0)
 							{
@@ -455,6 +465,9 @@ void GameClass::Update(MainRenderWindow& mainWindow)
 					else //horizontal hit insta death
 					{
 						player.lives--;
+						//SOUND BUFFER
+						sound.setBuffer(deathSB);
+						sound.play();
 						player.Respawn();
 						if (player.lives == 0)
 						{
