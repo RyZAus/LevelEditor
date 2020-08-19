@@ -71,6 +71,8 @@ public:
 	float friction;
 	int coins;
 	sf::SoundBuffer deathSB;
+	sf::SoundBuffer coinSB;
+	sf::SoundBuffer killSB;
 	sf::Sound sound;
 };
 

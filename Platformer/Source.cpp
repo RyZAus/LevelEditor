@@ -241,6 +241,8 @@ void EditorClass::Update(MainRenderWindow& mainWindow)
 bool GameClass::Start(MainRenderWindow& mainWindow)
 {
 	deathSB.loadFromFile("SFX/death.wav");
+	coinSB.loadFromFile("SFX/coin.wav");
+	killSB.loadFromFile("SFX/death.wav");
 	GetAllSaveFiles();
 	//setup our game and init our tiles
 	for (int i = 0; i < x; i++)
@@ -410,6 +412,8 @@ void GameClass::Update(MainRenderWindow& mainWindow)
 				if (pcol.hit)
 				{
 					std::cout << "Player Picked a Coin Up!" << std::endl;
+					sound.setBuffer(coinSB);
+					sound.play();
 					player.coins++;
 					tile[i][j].ChangeActor(Actor::Type::None);
 				}
@@ -445,6 +449,8 @@ void GameClass::Update(MainRenderWindow& mainWindow)
 						{
 							//we're on top
 							//kill enemy(temp code)
+							sound.setBuffer(killSB);
+							sound.play();
 							tile[i][j].ChangeActor(Actor::Type::None);
 						}
 						else
