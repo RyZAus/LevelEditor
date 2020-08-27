@@ -6,10 +6,8 @@
 #include <experimental/filesystem>
 //faster and skips re type
 namespace fs = std::experimental::filesystem;
-
 std::vector<std::string> saves;
 int curLevel = 0;
-
 void GetAllSaveFiles()
 {
 	std::string path = "\.";
@@ -26,7 +24,6 @@ void GetAllSaveFiles()
 		}
 	}
 }
-
 int main()
 {
 	EditorClass myEditor;
@@ -81,12 +78,10 @@ int main()
 	}
 	return 0;
 }
-
 bool MainMenu::Start()
 {
 	return true;
 }
-
 void MainMenu::Update(MainRenderWindow& mainWindow)
 {
 	while (menuActive)
@@ -101,7 +96,6 @@ void MainMenu::Update(MainRenderWindow& mainWindow)
 	}
 	return;
 }
-
 EditorClass::EditorClass()
 {
 	for (int i = 0; i < x; i++)
@@ -109,7 +103,6 @@ EditorClass::EditorClass()
 		tile[i] = new Tile[y];
 	}
 }
-
 bool EditorClass::Start(MainRenderWindow& mainWindow)
 {
 	//setup our views
@@ -117,6 +110,7 @@ bool EditorClass::Start(MainRenderWindow& mainWindow)
 	toolsView.setViewport(sf::FloatRect(0, 0, 0.045f, 1));
 	levelEditView = sf::View(sf::FloatRect(0, 0, mainWindow.windowWidth, mainWindow.windowHeight));
 	levelEditView.setViewport(sf::FloatRect(0.03f, 0, 1, 1));
+
 	// old Setup the window
 	// old window.create(sf::VideoMode(windowWidth, windowHeight), "Level Editor", sf::Style::Titlebar | sf::Style::Close);
 
@@ -152,7 +146,6 @@ bool EditorClass::Start(MainRenderWindow& mainWindow)
 	editorActive = true;
 	return true;
 }
-
 void EditorClass::Update(MainRenderWindow& mainWindow)
 {
 	//prep window for displaying stuff
@@ -237,7 +230,6 @@ void EditorClass::Update(MainRenderWindow& mainWindow)
 	mainWindow.window.draw(inputField);
 	mainWindow.window.display();
 }
-
 bool GameClass::Start(MainRenderWindow& mainWindow)
 {
 	deathSB.loadFromFile("SFX/death.wav");
@@ -265,9 +257,10 @@ bool GameClass::Start(MainRenderWindow& mainWindow)
 	gameActive = true;
 	return true;
 }
-
 void GameClass::Update(MainRenderWindow& mainWindow)
 {
+	gameCounters.coinsCounter.text.setString("Coins: " + std::to_string(player.coins));
+	gameCounters.livesCounter.text.setString("Lives: " + std::to_string(player.lives));
 	mainWindow.window.clear(sf::Color::White);
 	deltaTime = clock.restart().asSeconds();
 	//controls
@@ -414,7 +407,7 @@ void GameClass::Update(MainRenderWindow& mainWindow)
 					std::cout << "Player Picked a Coin Up!" << std::endl;
 					sound.setBuffer(coinSB);
 					sound.play();
-					player.coins++;
+					player.coins++;					
 					tile[i][j].ChangeActor(Actor::Type::None);
 				}
 			}
@@ -491,7 +484,7 @@ void GameClass::Update(MainRenderWindow& mainWindow)
 					if (curLevel != saves.size() - 1)
 					{
 						curLevel++;
-						LoadLevel(saves[curLevel], tile);
+						LoadLevel(saves[curLevel], tile);						
 					}
 					else
 					{
@@ -508,6 +501,8 @@ void GameClass::Update(MainRenderWindow& mainWindow)
 	//set player pos
 	player.setPosition(player.nextPos);
 	//draw
+	mainWindow.window.draw(gameCounters.coinsCounter);
+	mainWindow.window.draw(gameCounters.livesCounter);
 	mainWindow.window.draw(player);
 	mainWindow.window.display();
 }

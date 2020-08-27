@@ -69,7 +69,7 @@ void GameClass::LoadLevel(std::string levelName, Tile** incTile)
 				int curStart;
 				int curEnd = 0;
 				std::string posString;
-				if (line[0] == 'C' && line[1] == '0') //[c][o]ins
+				if (line[0] == 'C' && line[1] == 'o') //[c][o]ins
 				{
 					std::cout << "Loading Coins! \n";
 					while (curEnd < lineHold.length() && lineHold.find('(') != std::string::npos) //if the ")" isnt the last line
@@ -79,7 +79,7 @@ void GameClass::LoadLevel(std::string levelName, Tile** incTile)
 						posString = lineHold.substr(curStart + 1, curEnd - (curStart + 1)); //cut the numbers out
 						std::cout << "Loaded coin at: " << posString << "\n"; //we now have something like 5,15
 						std::string xStr = posString.substr(0, posString.find(','));
-						std::string yStr = posString.substr(posString.find(','), posString.length());
+						std::string yStr = posString.substr(posString.find(',') + 1, posString.length());
 						incTile[std::stoi(xStr)][std::stoi(yStr)].ChangeActor(Actor::Type::Coin);
 						lineHold[curStart] = '<';
 						lineHold[curEnd] = '>';
