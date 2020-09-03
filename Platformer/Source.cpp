@@ -29,6 +29,7 @@ int main()
 	EditorClass myEditor;
 	MainMenu myMainMenu;
 	GameClass myGame;
+	GameOver gOver; //EDIT
 	MainRenderWindow mainWindow;
 	mainWindow.window.create(sf::VideoMode(mainWindow.windowWidth, mainWindow.windowHeight), "My Program", sf::Style::Titlebar | sf::Style::Close);
 	while (mainWindow.window.isOpen())
@@ -70,8 +71,18 @@ int main()
 					return EXIT_FAILURE;
 				}
 			}
-			myGame.Update(mainWindow);
+			myGame.Update(mainWindow, myMainMenu);
 			break;
+		case Mode::GameOver: //EDIT
+			if (!gOver.goActive)
+			{
+				if (!gOver.Start())
+				{
+					return EXIT_FAILURE;
+				}
+			}
+			gOver.Update(mainWindow);
+			break; //EDIT
 		default:
 			break;
 		}
@@ -257,7 +268,7 @@ bool GameClass::Start(MainRenderWindow& mainWindow)
 	gameActive = true;
 	return true;
 }
-void GameClass::Update(MainRenderWindow& mainWindow)
+void GameClass::Update(MainRenderWindow& mainWindow, MainMenu& mainMenu)
 {
 	gameCounters.coinsCounter.text.setString("Coins: " + std::to_string(player.coins));
 	gameCounters.livesCounter.text.setString("Lives: " + std::to_string(player.lives));
@@ -488,21 +499,31 @@ void GameClass::Update(MainRenderWindow& mainWindow)
 					}
 					else
 					{
-						//VICTORY SCREEN HERE
-						mainWindow.close();
+						//Return to win screen
+						mainMenu.ChangeMode(Mode::GameOver);
+						return;
 					}
 				}
 			}
 		}
 	}
-	std::cout << "Player velocity: " << player.veloctiy.x << "," << player.veloctiy.y << std::endl;
-	std::cout << "Player curPos: " << player.getPosition().x << "," << player.getPosition().y << std::endl;
-	std::cout << "Player nextPos: " << player.nextPos.x << "," << player.nextPos.y << std::endl;
 	//set player pos
 	player.setPosition(player.nextPos);
-	//draw
+	//draw all our stuff
 	mainWindow.window.draw(gameCounters.coinsCounter);
 	mainWindow.window.draw(gameCounters.livesCounter);
 	mainWindow.window.draw(player);
+	mainWindow.window.display();
+}
+bool GameOver::Start()
+{
+	//Start the game over screen
+	return true;
+}
+void GameOver::Update(MainRenderWindow& mainWindow)
+{
+	//Clear our window to display GO
+	mainWindow.window.clear(sf::Color::White);
+	mainWindow.window.draw(goScreen);
 	mainWindow.window.display();
 }

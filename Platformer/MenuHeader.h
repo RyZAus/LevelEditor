@@ -3,10 +3,11 @@
 #include <iostream>
 #include <functional>
 #include "WindowHeader.h"
-
+// ^^^ Including our necessary files ^^^
 class Mode 
 {
 public:
+	//keeping track of our modes
 	enum MenuMode
 	{
 		MainMenu,
@@ -19,11 +20,8 @@ public:
 	//keep track of where we are and default to the main menu
 	MenuMode currentMode = MainMenu;
 };
-
 class EditorLevelSelect {};
-
 class GameLevelSelect {};
-
 class MenuButton : public sf::Drawable, public sf::Transformable
 {
 private:
@@ -98,15 +96,17 @@ public:
 		}
 	}
 };
-
 class MainMenu
 {
 public:
+	//set our buttons
 	MenuButton levelEditorButton;
 	MenuButton gameButton;
+	//name our mode
 	Mode myMode;
 	MainMenu()
 	{
+		//SET OUR RECT AND TEXT VARIABLES
 		levelEditorButton.text.setString("Level Editor");
 		//Edited from 6 to 10 to prevent words being cut off on the main menu
 		levelEditorButton.rect.setSize(sf::Vector2f(levelEditorButton.text.getGlobalBounds().width + 10, levelEditorButton.text.getGlobalBounds().height + 10));
@@ -124,39 +124,44 @@ public:
 		gameButton.spriteB.setPosition(gameButton.rect.getPosition().x / 1.1, gameButton.rect.getPosition().y / 1.05);
 	}
 	sf::Vector2f worldPos;
+	//set our default state for this class to true
 	bool Start();
 	void Update(MainRenderWindow& mainWindow);
-
+	//set our default state for this class to true
 	bool menuActive = true;
-
 	void ChangeMode(Mode::MenuMode m)
 	{
+		//Change the mode to inactive
 		myMode.currentMode = m;
 		menuActive = false;
 	}
 };
-
-class GameOver
+class GameOver //EDIT
 {
 public:
+	//TEST CODE for menubutton
 	MenuButton goScreen;
+	//Name our mode goMode (Game Over Mode)
 	Mode goMode;
+	//Call our function Game over
 	GameOver()
 	{
-		goScreen.text.setString("GAME OVER");
+		//Setting our text and variables for the text
+		goScreen.text.setString("WIN!");
 		goScreen.rect.setSize(sf::Vector2f(goScreen.text.getGlobalBounds().width + 6, goScreen.text.getGlobalBounds().height + 6));
 		goScreen.rect.setPosition(sf::Vector2f(1025 - (1025 / 2 - (goScreen.rect.getSize().x / 2)), 650 - (650 / 2 - (goScreen.rect.getSize().y / 2))));
 		goScreen.text.setPosition(goScreen.rect.getPosition().x + (goScreen.rect.getSize().x / 400000), goScreen.rect.getPosition().y);
 	}
 	sf::Vector2f worldPos;
+	//Setting our start as bool for if it is active and set our update
 	bool Start();
 	void Update(MainRenderWindow& mainWindow);
-
-	bool goActive = false;
-
+	//set our default state for this class to true
+	bool goActive = true;
 	void ChangeMode(Mode::MenuMode k)
 	{
+		//Change the mode to inactive
 		goMode.currentMode = k;
-		goActive = true;
+		goActive = false;
 	}
 };

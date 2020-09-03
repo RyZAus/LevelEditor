@@ -13,22 +13,22 @@ C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\MenuHeader.h
 C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\MenuHeader.h(116,80): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\MenuHeader.h(124,105): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\MenuHeader.h(124,66): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.h(105,112): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.h(105,70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.h(112,111): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.h(112,70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.h(106,112): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.h(106,70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.h(113,111): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Game.h(113,70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Source.cpp(13,21): warning C4129: '.': unrecognized character escape sequence
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Source.cpp(109,86): warning C4244: 'argument': conversion from 'const int' to 'T', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Source.cpp(120,86): warning C4244: 'argument': conversion from 'const int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Source.cpp(111,81): warning C4244: 'argument': conversion from 'const int' to 'T', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Source.cpp(122,81): warning C4244: 'argument': conversion from 'const int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Source.cpp(111,57): warning C4244: 'argument': conversion from 'const int' to 'T', possible loss of data
+C:\Users\User\Documents\1. Study\20T2\GAD173\LevelEditor\Platformer\Source.cpp(122,57): warning C4244: 'argument': conversion from 'const int' to 'T', possible loss of data
           with
           [
               T=float

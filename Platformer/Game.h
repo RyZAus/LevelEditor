@@ -1,5 +1,6 @@
 #pragma once
 #include "Editor.h"
+#include "MenuHeader.h"
 struct Collision
 {
 	bool hit;
@@ -99,17 +100,17 @@ public:
 		
 		//Edited from 6 to 10 to prevent words being cut off on the main menu
 		coinsCounter.rect.setSize(sf::Vector2f(coinsCounter.text.getGlobalBounds().width + 10, coinsCounter.text.getGlobalBounds().height + 10));
-		coinsCounter.rect.setPosition(sf::Vector2f(1025 - (1025 / 2 - (coinsCounter.rect.getSize().x / 2)), 585 - (650 / 2 - (coinsCounter.rect.getSize().y / 2))));
+		coinsCounter.rect.setPosition(sf::Vector2f(1300 - (1025 / 2 - (coinsCounter.rect.getSize().x / 2)), 350 - (650 / 2 - (coinsCounter.rect.getSize().y / 2))));
 		coinsCounter.text.setPosition(coinsCounter.rect.getPosition().x + (coinsCounter.rect.getSize().x / 400000), coinsCounter.rect.getPosition().y);
 		//Sets our sprite position for level editor
-		coinsCounter.spriteB.setPosition(coinsCounter.rect.getPosition().x / 1.05, coinsCounter.rect.getPosition().y / 1.05);
+		coinsCounter.spriteB.setPosition(coinsCounter.rect.getPosition().x / 1.05, coinsCounter.rect.getPosition().y / 1.5);
 		//game button
 		//Edited from 6 to 10 to prevent words being cut off on the main menu
 		livesCounter.rect.setSize(sf::Vector2f(livesCounter.text.getGlobalBounds().width + 9, livesCounter.text.getGlobalBounds().height + 10));
-		livesCounter.rect.setPosition(sf::Vector2f(900 - (1025 / 2 + 150 - (livesCounter.rect.getSize().x / 2)), 580 - (650 / 2 - (livesCounter.rect.getSize().y / 2))));
+		livesCounter.rect.setPosition(sf::Vector2f(1200 - (1025 / 2 + 150 - (livesCounter.rect.getSize().x / 2)), 350 - (650 / 2 - (livesCounter.rect.getSize().y / 2))));
 		livesCounter.text.setPosition(livesCounter.rect.getPosition().x + (livesCounter.rect.getSize().x / 400000), livesCounter.rect.getPosition().y);
 		//Sets our sprite position for game button
-		livesCounter.spriteB.setPosition(livesCounter.rect.getPosition().x / 1.1, livesCounter.rect.getPosition().y / 1.05);
+		livesCounter.spriteB.setPosition(livesCounter.rect.getPosition().x / 1.1, livesCounter.rect.getPosition().y / 1.5);
 	}
 };
 class GameClass
@@ -117,7 +118,7 @@ class GameClass
 public:
 	GameClass();
 	bool Start(MainRenderWindow& mainWindow);
-	void Update(MainRenderWindow& mainWindow);
+	void Update(MainRenderWindow& mainWindow, MainMenu& mainMenu);
 	bool gameActive = false;
 	static const int x = 30;
 	static const int y = 20;
